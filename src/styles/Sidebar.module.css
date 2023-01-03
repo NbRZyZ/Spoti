@@ -1,0 +1,11 @@
+.sidebar {
+  background-color:black;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 3vh;
+  padding: 35px;
+}

@@ -1,0 +1,16 @@
+* {
+  font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl,
+    CircularSp-Grek, CircularSp-Deva, sans-serif;
+  font-weight: 700;
+}
+
+.App {
+  width: 100vw;
+  /* height: 100vh; */
+  display: flex;
+}
+.Container {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}

@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.inputSection {
+  display: flex;
+  margin: 30px;
+}
+
+.input {
+  border-radius: 40px;
+  width: 350px;
+  border:1px solid black;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.profileSection {
+  display: flex;
+  width: 400px;
+  height: 200px;
+  align-items: center;
+  background-color: #181818;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 40px;
+  gap: 5%;
+}
+
+.profileSection:hover {
+  background-color: #3a3a3a;
+}
+
+.img {
+  width: 100px;
+  height: 105px;
+  border-radius: 50%;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cardSection {
+  height: 88vh;
+}
+
+.typeDesign {
+  background-color: #000000;
+  border-radius: 15px;
+  padding: 8px;
+  width: fit-content;
+  font-size: 14px;
+}
