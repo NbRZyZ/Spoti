@@ -42,17 +42,16 @@ export const DataProvider = (props) => {
         console.log(err);
       });
 
-    (async () => {
-      const res = await axios.get("http://localhost:5000/playlists");
-      console.log(res.data);
-      setList(res.data);
-    })();
+      axios.get('http://localhost:8000/playlists')
+        .then((res)=>{
+          setList(res.data)
+        })
+      axios.get('http://localhost:8000/songs')
+        .then((res)=>{
+          setSongs(res.data)
+        })
 
-    (async () => {
-      const res = await axios.get("http://localhost:5000/songs");
-      console.log(res.data);
-      setSongs(res.data);
-    })();
+
   }, []);
 
   async function search() {
@@ -128,7 +127,7 @@ export const DataProvider = (props) => {
         create,
         setCreate,
         songs,
-        setList,
+        setList,  
       }}
     >
       {props.children}

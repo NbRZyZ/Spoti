@@ -20,15 +20,21 @@ export const Createplaylist = () => {
       });
     setToggle(false);
   };
-
   useEffect(() => {
     axios.get("http://localhost:8000/playlists").then((res) => {
       setLists(res.data);
     });
   });
-
+  const DeleteList = (id) =>{
+    console.log(id)
+    axios.delete('http://localhost:8000/playlist/' + id)
+      .then(()=>{
+        console.log('done')
+      })
+  }
+  
   return (
-    <div>
+    <div className={styles.body}>
       <button className={styles.tog} onClick={() => setToggle(!toggle)}>
         Create playlist
       </button>
@@ -56,12 +62,13 @@ export const Createplaylist = () => {
           </div>
         )}
       </div>
-      <div>
+      <div className={styles.talb}>
         {lists.map((item) => {
           return (
-            <div>
-              <h1>Title : {item.title}</h1>
-              <h1>Description: {item.description}</h1>
+            <div className={styles.playlistcont}>
+              <h1 className={styles.h1}>Title : {item.title}</h1>
+              <h1 className={styles.h1}>Description: {item.description}</h1>
+              <button onClick={()=>DeleteList(item._id)} >Delete</button>
             </div>
           );
         })}

@@ -1,3 +1,7 @@
+.body{
+    height: 100vh;
+    overflow: scroll;
+}
 .bcontainer{
     display: flex;
     justify-content: center;
@@ -50,4 +54,17 @@
 .tog:hover {
     background-color:black;
     color: white;
-  }
+}
+.playlistcont{
+    width: 30%;
+    background-color: grey;
+    margin: 1%;
+    border-radius: 5px;
+}
+.h1{
+    font-size:large;
+}
+.talb{
+    display: flex;
+    flex-wrap: wrap;
+}
