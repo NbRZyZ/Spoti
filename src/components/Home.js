@@ -19,7 +19,6 @@ export const Home = () => {
                 // An error happened
             })
     }
-
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             console.log(user);

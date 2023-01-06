@@ -1,6 +1,6 @@
 import styles from "../styles/createplaylist.module.css";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 export const Createplaylist = () => {
   const [title, setTitle] = useState(" ");
@@ -25,14 +25,13 @@ export const Createplaylist = () => {
       setLists(res.data);
     });
   });
-  const DeleteList = (id) =>{
-    console.log(id)
-    axios.delete('http://localhost:8000/playlist/' + id)
-      .then(()=>{
-        console.log('done')
-      })
-  }
-  
+  const DeleteList = (id) => {
+    console.log(id);
+    axios.delete("http://localhost:8000/playlist/" + id).then(() => {
+      console.log("done");
+    });
+  };
+
   return (
     <div className={styles.body}>
       <button className={styles.tog} onClick={() => setToggle(!toggle)}>
@@ -58,18 +57,19 @@ export const Createplaylist = () => {
             <button onClick={addList} className={styles.button}>
               create
             </button>
-
           </div>
         )}
       </div>
       <div className={styles.talb}>
         {lists.map((item) => {
           return (
-            <div className={styles.playlistcont}>
-              <h1 className={styles.h1}>Title : {item.title}</h1>
-              <h1 className={styles.h1}>Description: {item.description}</h1>
-              <button onClick={()=>DeleteList(item._id)} >Delete</button>
-            </div>
+              <div className={styles.playlistcont}>
+                <h1 className={styles.h1}>Title : {item.title}</h1>
+                <h1 className={styles.h1}>Description: {item.description}</h1>
+                {/* <Link to="/Createplaylist" style={{textDecoration : "none"}}> */}
+                <button onClick={() => DeleteList(item._id)}>Delete</button>
+                {/* </Link> */}
+              </div>
           );
         })}
       </div>

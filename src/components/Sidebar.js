@@ -13,12 +13,16 @@ export const Sidebar = () => {
         <Link to="/" style={{ textDecoration: "none", color: "white" }}>
           Home
         </Link>
-        <Link to="/Search" style={{ textDecoration: "none", color: "white" }}>
-          Search
+        <Link to="/Songlist" style={{ textDecoration: "none", color: "white  " }} >
+          Songlist
         </Link>
         <Link to="/Createplaylist" style={{ textDecoration: "none", color: "white  " }} >
           Playlist
         </Link>
+        <Link to="/Search" style={{ textDecoration: "none", color: "white" }}>
+          Search
+        </Link>
+
       </div>
     </div>
   );

@@ -56,9 +56,10 @@
     color: white;
 }
 .playlistcont{
-    width: 30%;
+    width: 20%;
     background-color: grey;
-    margin: 1%;
+    color: black;
+    margin:1%;
     border-radius: 5px;
 }
 .h1{
