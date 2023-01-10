@@ -9,7 +9,7 @@ import {
   DataProvider,
   Login,
   Signup,
-  Songlist
+  Songlist,
 } from "./components";
 
 
@@ -29,7 +29,8 @@ function App() {
                 <Route path=":id" element={<Songs />} />
               </Route>
               <Route path="/createplaylist" element={<Createplaylist />} />
-              <Route path="songlist" element={<Songlist/>} />
+              <Route path="playlists/:id" element={<Songlist/>} />
+
             </Routes>
           </div>
         </div>

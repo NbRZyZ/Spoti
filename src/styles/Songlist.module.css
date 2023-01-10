@@ -1,8 +1,14 @@
 .songcont{
-    border: 1px solid red;
+    background-color:whitesmoke;
     width: 90%;
-    margin: 2%;
+    margin: 1%;
+    border-radius: 10px;
 }
 .h1{
     font-size:large;
+}
+.btn{
+    border: none;
+    border-radius:5px;
+    background-color:rgb(158, 255, 226);
 }

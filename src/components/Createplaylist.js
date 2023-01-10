@@ -1,6 +1,7 @@
 import styles from "../styles/createplaylist.module.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router";
 import axios from "axios";
 export const Createplaylist = () => {
   const [title, setTitle] = useState(" ");
@@ -9,8 +10,9 @@ export const Createplaylist = () => {
   const [lists, setLists] = useState([]);
   const nav = useNavigate();
   const addList = () => {
+    // const { id } = useParams()
     axios
-      .post("http://localhost:8000/playlists", {
+      .post("https://playlistup.onrender.com/playlists", {
         title: title,
         description: desc,
       })
@@ -21,13 +23,13 @@ export const Createplaylist = () => {
     setToggle(false);
   };
   useEffect(() => {
-    axios.get("http://localhost:8000/playlists").then((res) => {
+    axios.get("https://playlistup.onrender.com/playlists").then((res) => {
       setLists(res.data);
     });
   });
   const DeleteList = (id) => {
     console.log(id);
-    axios.delete("http://localhost:8000/playlist/" + id).then(() => {
+    axios.delete("https://playlistup.onrender.com/playlist/" + id).then(() => {
       console.log("done");
     });
   };
@@ -60,15 +62,18 @@ export const Createplaylist = () => {
           </div>
         )}
       </div>
-      <div className={styles.talb}>
+      <div>
         {lists.map((item) => {
           return (
+            <div>
+            <Link to={"/playlists/"+item._id}>
               <div className={styles.playlistcont}>
                 <h1 className={styles.h1}>Title : {item.title}</h1>
                 <h1 className={styles.h1}>Description: {item.description}</h1>
-                {/* <Link to="/Createplaylist" style={{textDecoration : "none"}}> */}
-                <button onClick={() => DeleteList(item._id)}>Delete</button>
-                {/* </Link> */}
+              </div>
+              </Link>
+
+              <button onClick={() => DeleteList(item._id)}>Delete</button>
               </div>
           );
         })}

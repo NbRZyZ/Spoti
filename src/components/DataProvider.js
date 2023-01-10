@@ -42,11 +42,11 @@ export const DataProvider = (props) => {
         console.log(err);
       });
 
-      axios.get('http://localhost:8000/playlists')
+      axios.get('https://playlistup.onrender.com/playlists')
         .then((res)=>{
           setList(res.data)
         })
-      axios.get('http://localhost:8000/songs')
+      axios.get('https://playlistup.onrender.com/songs')
         .then((res)=>{
           setSongs(res.data)
         })
